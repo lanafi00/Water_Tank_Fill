@@ -1,5 +1,6 @@
 # Water Tank Fill/Drain Controller
 A PLC control system simulating an industrial tank-filling process and its real-time digital twin. This project is designed to mirror virtual commissioning, wherein PLC control logic is validated via 3D simulation. 
+<img width="843" height="319" alt="Screenshot 2026-06-19 at 1 01 08 AM" src="https://github.com/user-attachments/assets/34f85c25-4cad-41ba-b937-2ac590974fed" />
 
 This repository has two parts:
 - **`/devices`, `/pous`, `project.json`** — the PLC controller, built in **OpenPLC Editor** using **IEC 61131-3 Structured Text**
