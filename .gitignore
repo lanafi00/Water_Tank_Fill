@@ -16,3 +16,9 @@ unity/[Mm]emoryCaptures/
 *.booproj
 *.unityproj
 *.tmp
+
+# macOS
+.DS_Store
+
+# Run logs from the Unity tank plant
+unity/TankLogs/
