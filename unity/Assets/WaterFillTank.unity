@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 83870585}
   - component: {fileID: 83870584}
+  - component: {fileID: 83870586}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -173,6 +174,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &83870586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83870583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262fdd823d5e64854acc1f312155627f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ModbusPlcLink
+  host: 127.0.0.1
+  port: 502
+  pollIntervalMs: 50
+  staleAfterSeconds: 0.5
+  mw0Address: 1024
+  qx0Address: 0
+  freezeHeartbeatKey: 102
+  freezeHeartbeat: 0
 --- !u!1 &1108780415
 GameObject:
   m_ObjectHideFlags: 0

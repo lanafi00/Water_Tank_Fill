@@ -1,5 +1,5 @@
 PROGRAM main
-  VAR_OUTPUT
+VAR_OUTPUT
     PUMP AT %QX0.0 : BOOL;          (* coil 0: pump relay *)
     FAULT AT %QX0.1 : BOOL;         (* coil 1: both floats TRUE, impossible if sensors are healthy *)
     COMMS_FAULT AT %QX0.2 : BOOL;   (* coil 2: heartbeat from the plant stopped changing *)
@@ -19,7 +19,7 @@ PROGRAM main
     HB_TIMER : TON;
   END_VAR
 
-  FLOAT_HIGH := FLOAT_HIGH_IN <> 0;
+FLOAT_HIGH := FLOAT_HIGH_IN <> 0;
   FLOAT_LOW := FLOAT_LOW_IN <> 0;
   ESTOP_OK := ESTOP_OK_IN <> 0;
 
@@ -34,11 +34,5 @@ PROGRAM main
   PUMP_LATCH := (FLOAT_LOW OR PUMP_LATCH) AND NOT FLOAT_HIGH AND ESTOP_OK
                 AND NOT FAULT AND NOT COMMS_FAULT;
   PUMP := PUMP_LATCH;
-END_PROGRAM
 
-CONFIGURATION Config0
-  RESOURCE Res0 ON PLC
-    TASK task0 (INTERVAL := T#20ms, PRIORITY := 0);
-    PROGRAM instance0 WITH task0 : main;
-  END_RESOURCE
-END_CONFIGURATION
+END_PROGRAM
