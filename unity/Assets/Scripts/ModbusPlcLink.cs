@@ -48,10 +48,6 @@ public class ModbusPlcLink : MonoBehaviour, IPumpController
     double lastRoundTripMs;
     string lastError = "not connected yet";
 
-    public bool LinkHealthy
-    {
-        get { lock (gate) return clock.Elapsed.TotalSeconds - lastGoodExchange < staleAfterSeconds; }
-    }
 
     // ---- IPumpController ----
     public bool PumpOn { get { lock (gate) return LinkHealthyUnlocked() && inPump; } }
