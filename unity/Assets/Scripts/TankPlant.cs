@@ -48,7 +48,6 @@ public class TankPlant : MonoBehaviour
     // Process state.
     public bool PumpRunning { get; private set; }
     public bool Overflowing => level >= 1f && PumpRunning;
-    public bool RunningDry => level <= 0f && PumpRunning;
 
     IPumpController controller;
     Vector3 fullScale;
@@ -164,7 +163,6 @@ public class TankPlant : MonoBehaviour
         if (controller != null && controller.SensorFault) HudLine("FAULT: both float switches TRUE", warn);
         if (controller != null && controller.CommsFault) HudLine("COMMS FAULT: pump forced off", warn);
         if (Overflowing) HudLine("OVERFLOW: pump running on a full tank", warn);
-        if (RunningDry) HudLine("RUNNING DRY", warn);
     }
 
     float hudY;
